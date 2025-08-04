@@ -1,11 +1,12 @@
 import SingleItem from "./SingleItem";
 
-export function ItemList() {
+export function ItemList({ items }) {
   return (
     <div>
-      <SingleItem />
-      <SingleItem />
-      <SingleItem />
+      <h3>Items List</h3>
+      {items.map((item) => (
+        <SingleItem item={item} key={item.id} />
+      ))}
     </div>
   );
 }

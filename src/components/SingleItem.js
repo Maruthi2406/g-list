@@ -1,4 +1,4 @@
-export default function SingleItem() {
+export default function SingleItem({ items }) {
   return (
     <div className="item">
       <div>Item Name</div>

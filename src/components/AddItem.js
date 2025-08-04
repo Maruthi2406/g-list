@@ -1,15 +1,15 @@
 import { useState } from "react";
-export function AddItem() {
-  const [name, setName] = useState("Milk");
-  const [quantity, setQuantity] = useState();
-  const [price, setPrice] = useState();
+export function AddItem({ up }) {
+  const [name, setName] = useState("");
+  const [quantity, setQuantity] = useState(1);
+  const [price, setPrice] = useState(0);
 
   function handleSubmit(e) {
     e.preventDefault();
     if (name === "" || price === "") return;
     const item = { name, quantity, price, id: Date.now() };
     console.log(item);
-
+    up(item);
     setName("");
     setQuantity(1);
     setPrice(0);
@@ -33,7 +33,7 @@ export function AddItem() {
           <label>Quantity:</label>
           <select
             value={quantity}
-            onChange={(e) => setQuantity(Number(e.target.value))}
+            onChange={(e) => setQuantity(e.target.value)}
           >
             <option>choose form option</option>
             {Array.from({ length: 10 }, (_, k) => k + 1).map((value) => (
@@ -51,7 +51,7 @@ export function AddItem() {
           <input
             type="number"
             value={price}
-            onChange={(e) => setPrice(Number(e.target.value))}
+            onChange={(e) => setPrice(e.target.value)}
           />
         </div>
 
