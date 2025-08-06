@@ -16,12 +16,19 @@ function App() {
       return items.filter((item) => item.id !== id);
     });
   }
+  function selectedItem(id) {
+    setItems((items) => {
+      return items.map((item) => {
+        return item.id === id ? { ...item, selected: !item.selected } : item;
+      });
+    });
+  }
 
   return (
     <div>
       <Header />
       <AddItem up={addItem} />
-      <ItemList items={items} dItem={dItem} />
+      <ItemList items={items} dItem={dItem} selectedItem={selectedItem} />
       <Footer />
     </div>
   );

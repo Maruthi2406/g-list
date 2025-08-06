@@ -7,7 +7,7 @@ export function AddItem({ up }) {
   function handleSubmit(e) {
     e.preventDefault();
     if (name === "" || price === "") return;
-    const item = { name, quantity, price, id: Date.now() };
+    const item = { name, quantity, price, id: Date.now(), selected: false };
     console.log(item);
     up(item);
     setName("");

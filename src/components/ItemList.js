@@ -1,6 +1,6 @@
 import SingleItem from "./SingleItem";
 
-export function ItemList({ items, dItem }) {
+export function ItemList({ items, dItem, selectedItem }) {
   const total = items.reduce((accum, item) => {
     return (accum = accum + item.price * item.quantity);
   }, 0);
@@ -10,7 +10,12 @@ export function ItemList({ items, dItem }) {
     <div>
       <h3>Items List</h3>
       {items.map((item) => (
-        <SingleItem item={item} key={item.id} dItem={dItem} />
+        <SingleItem
+          item={item}
+          key={item.id}
+          dItem={dItem}
+          selectedItem={selectedItem}
+        />
       ))}
       <div className="total"> Total:Rs{total} </div>
     </div>
