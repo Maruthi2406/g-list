@@ -30,7 +30,7 @@ body {
   right: 1rem;
   padding: 2rem 0;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: bold;
 }
 
@@ -69,7 +69,8 @@ body {
 }
 
 .item .close {
-  flex: 0.5;
+  flex: 1;
+  margin: 0.25rem 0;
   font-weight: bold;
   cursor: pointer;
 }

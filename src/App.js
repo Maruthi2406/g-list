@@ -29,7 +29,8 @@ function App() {
       <Header />
       <AddItem up={addItem} />
       <ItemList items={items} dItem={dItem} selectedItem={selectedItem} />
-      <Footer />
+
+      <Footer items={items} />
     </div>
   );
 }
